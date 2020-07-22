@@ -23,7 +23,7 @@ function render() {
     // display all institutions in the library
     myLibrary.forEach((faculty, id) => {
         let facultyInfo = document.createElement('tr');
-        let facultyKeys = Object.keys(inst);
+        let facultyKeys = Object.keys(faculty);
         facultyKeys.push("delete");
 
         facultyKeys.forEach((key) => {
@@ -49,11 +49,11 @@ function render() {
 
 render();
 
-let addInfo = document.querySelector("#add-faculty-info");
+let addInfo = document.querySelector("#fac-info-form");
 addInfo.addEventListener("submit", function(e){
     // prevent default submit action which sends data to a server
     e.preventDefault();
     let faculty = createNewFaculty();
-    addToLibrary(myLibrary, faculty, STORAGE_KEY);
+    addToLibrary(myLibrary, faculty, STORAGE_KEY, "#fac-list");
     hideModal();
 });

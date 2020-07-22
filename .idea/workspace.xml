@@ -20,13 +20,16 @@
   <component name="ProjectId" id="1ez8UM94yYHjEgbd2WNF0nODhs2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../fms" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -50,6 +53,10 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.jsp" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="340" y="25" width="1024" height="743" key="#Project_Structure" timestamp="1595356093762">
+      <screen x="59" y="24" width="1307" height="744" />
+    </state>
+    <state x="340" y="25" width="1024" height="743" key="#Project_Structure/59.24.1307.744@59.24.1307.744" timestamp="1595356093762" />
     <state x="583" y="221" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595318597855">
       <screen x="0" y="27" width="1600" height="873" />
     </state>

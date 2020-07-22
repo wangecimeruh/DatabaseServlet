@@ -1,2 +1,8 @@
+/target
+.settings
 .idea
-SchoolMgtSystem.iml
+sonar-project.properties
+/bin/
+/src/main/main.iml
+/src/test/test.iml
+*.iml

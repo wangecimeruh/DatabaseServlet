@@ -4,10 +4,7 @@
     <list default="true" id="57cdd8d3-1881-4ba6-9851-58ee2eaafa8c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/faculty/faculty.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/faculty/faculty.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/faculty/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/faculty/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/institution/institution.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/institution/institution.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/institution/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/institution/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/common.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

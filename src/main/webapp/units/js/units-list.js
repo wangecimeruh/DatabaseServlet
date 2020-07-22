@@ -1,20 +1,40 @@
+var courseUnit = {
+    pageTitle : 'Course Units',
+    data: [{
+              name: "ALGORITHMS",
+              code: 'A1444'
+          },{
+              name: "DISCRETE MATHEMATICS",
+              code: "232323"
+          },{
+              name: "DATABASES",
+              code: "2555o9888"
+    }],
+    list : function(){
+        var me = this;
 
-var unitList = ["ALGORITHMS",
-    "DISCRETE MATHEMATICS",
-    "DATABASES"];
+       var unitListTable = "<table border=\"1\"><tr><th>Name</th><th>Code<th></tr>";
 
-var one = 1;
-var two = 2;
+       for (let index = 0; index < me.data.length; index++)
+           unitListTable +=  "<tr><td>" + me.data[index].name + "</td><td>" + me.data[index].code + "<td></tr>";
 
-console.log(one + two)
+       unitListTable += "</table>";
 
-var unitListTable = "<table border=\"1\">";
+       document.getElementById("content").innerHTML = unitListTable;
+    },
+    add: function() {
+        var addForm = "<form action=\"/action_page.php\">"+
+              "<label for=\"cname\">Name:</label><br>"+
+              "<input type=\"text\" id=\"cname\" name=\"cname\"><br>"+
+              "<label for=\"ccode\">Code:</label><br>"+
+              "<input type=\"text\" id=\"ccode\" name=\"ccode\"><br><br>"+
+              "<input type=\"submit\" value=\"Submit\">"+
+            "</form>";
 
-for (let index = 0; index < unitList.length; index++)
-    unitListTable +=  "<tr><td>" + unitList[index] + "<td></tr>";
+         document.getElementById("content").innerHTML = addForm;
 
-unitListTable += "</table>";
-
-console.log(unitListTable);
-
-document.getElementById("table").innerHTML = unitListTable;
+    },
+    save: function(){
+        console.log("course unit")
+    }
+};

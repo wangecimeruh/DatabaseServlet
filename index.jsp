@@ -5,14 +5,12 @@
         </div>
         <div>
             <ul>
-                <li><a href="./institution/institution.html">Institutions</a></li>
                 <li><a href="campuses.html">Campuses</a></li>
-                <li><a href="./faculty/faculty.html">Faculties</a></li>
+                <li><a href="./faculty/faculties.html">Faculties</a></li>
                 <li><a href="./departments/Departments.html">Departments</a></li>
                 <li><a href="./courses/Courses.html">Courses</a></li>
-                <li><a href="./units/units.html">Units</a></li>
-                <li><a href="./student/student.html">Students</a></li>
-                <li><a href="./tutor/tutor.html">Tutors</a></li>
+                <li><a href="">Units</a></li>
+                <li><a href="">Students</a></li>
             </ul>
         </div>
     </body>

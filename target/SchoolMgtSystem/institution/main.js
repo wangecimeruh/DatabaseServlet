@@ -9,7 +9,7 @@ function saveInstitution(){
 
 function getLibrary(){
     // check if there is a library in storage, if not, create a new empty one
-    let data = localStorage.getItem('library')?
+    let data = localStorage.getItem('ilibrary')?
         JSON.parse(localStorage.getItem('library')) : [];
     if (data) {
         data.forEach((instObj) => {

@@ -1,4 +1,9 @@
-var courseUnit = {
+import TracomAcademy from '../../app-library.js';
+
+const refresh = document.getElementById("refresh");
+const addUnit = document.getElementById("add-unit");
+
+const courseUnit = {
     store: [{
               name: "ALGORITHMS",
               code: 'A1444'
@@ -22,5 +27,13 @@ var courseUnit = {
     }]
 };
 
+function generateGrid() {
+    return TracomAcademy.Grid.apply(courseUnit); 
+}
 
-TracomAcademy.Grid.apply(courseUnit);
+function generateForm() {
+    return TracomAcademy.Form.apply(courseUnit);
+}
+
+refresh.addEventListener('click', generateGrid);
+addUnit.addEventListener('click', generateForm);

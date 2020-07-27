@@ -1,5 +1,4 @@
 <html>
-
 <body>
     <div>
         <h2>Tracom Training School Management System</h2>
@@ -18,5 +17,4 @@
         </ul>
     </div>
 </body>
-
 </html>

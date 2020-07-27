@@ -1,36 +1,86 @@
 var TracomAcademy = TracomAcademy || {};
 
-TracomAcademy.contentRender = "content";
-
 TracomAcademy.Grid = function(){
-  var me = this;
+    let me = this;
 
-  var table = "<table border=\"1\"><tr><th>Name</th><th>Code<th></tr>";
+    let tableColGrp = '';
+    let tableHeader = '';
+    let tableRows = '';
 
-  me.store.forEach(field => {
-      table += `<label for=\"${field.id}\">${field.label}</label><br> <input type=\"${field.type}\" id=\"${field.id}\" name=\"${field.name}\"><br>`;
-   });
+    me.columns.forEach(column => {
+        tableColGrp += `<col width='${column.width}%'>`;
+        tableHeader += `<th>${column.header}</th>`;
 
-   table += "</table>";
+    });
 
-   document.getElementById(me.contentRender).innerHTML = table;
+    me.store.forEach(record => {
+        tableRows += `<tr>`;
+        me.columns.forEach(column => {
+            tableRows += `<td>${record[column.dataIndex]}</td>`;
+        });
+        tableRows += `</tr>`;
+
+    });
+
+    let addButton = me.componentId + '-add';
+    let editButton = me.componentId + '-edit';
+    let deleteButton = me.componentId + '-delete';
+
+    const tableView =
+        `<div style="overflow-x:auto;">`
+            + `<button class="button add" id="${addButton}">Add</button> `
+            + `<button class="button edit" id="${editButton}">Edit</button> `
+            + `<button class="button delete" id="${deleteButton}">Delete</button>`
+        + `</div>`
+        + `<div style="overflow-x:auto;">`
+            + `<table class="tracom-academy">`
+                + `<colgroup>${tableColGrp}</colgroup>`
+                + `<thead><tr>${tableHeader}</tr></thead>`
+                + `<tbody>${tableRows}</tbody>`
+        + `</table></div>`;
+
+    document.getElementById(me.contentRender).innerHTML = tableView;
+
+    document.getElementById(addButton).addEventListener("click", function(){
+        TracomAcademy.Form.call(me);
+    });
 
 }
 
 TracomAcademy.Form = function(){
-   var me = this;
+   let me = this;
 
-   var form = "<form action=\"/action_page.php\">";
+   let form = `<div class="form-container" onsubmit="return false"><form>`;
 
-   me.form.forEach(field => {
-      form += `<label for=\"${field.id}\">${field.label}</label><br> <input type=\"${field.type}\" id=\"${field.id}\" name=\"${field.name}\"><br>`;
+   me.form.items.forEach(field => {
+        form += `<div class="row">`
+            + `<div class="col-25">`
+                + `<label for="${field.id}">${field.label}</label>`
+            + `</div>`
+            + `<div class="col-75">`;
+
+                if (field.type == 'textarea')
+                    form += `<textarea id="${field.id}" name="${field.name}" style="height:200px" ></textarea>`;
+                else if (field.type == 'select'){
+                    form += `<select id="${field.id}" name="${field.name}">`;
+                        if (field.options)
+                            field.options.forEach(option => {
+                                form += `<option value="${option.optionValue}">${option.optionLabel}</option>`;
+                            })
+
+                    form += `</select>`;
+                }else
+                    form += `<input type="${field.type}" id="${field.id}" name="${field.name}"/>`;
+
+            form += `</div>`
+        + `</div>`;
    });
 
-   form +=  "</form>";
+   let submitFormBtn = me.form.id + '-submit';
+   form += `<div class="row">`
+        + `<button type="submit" class="button add" id="${submitFormBtn}">Save</button>`
+    + `</div></form>`;
 
    document.getElementById(me.contentRender).innerHTML = form;
 
 }
-
-
-/// {name: "name",fieldLabel: "

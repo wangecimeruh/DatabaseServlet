@@ -5,39 +5,28 @@ TracomAcademy.Grid.apply({
     columns: [{
         header: "Id",
         dataIndex: "id",
-        width: 10
+        width: 3
     },{
         header: "Name",
         dataIndex: "name",
-        width: 25
+        width: 27
     },{
         header: "Code",
         dataIndex: "code",
-        width: 25
+        width: 20
     },{
         header: "Details",
         dataIndex: "details",
-        width: 40
-    }],
-    store: [{
-        id: 1,
-        name: "ALGORITHMS",
-        code: "A1444",
-        details: "JUST DESCRIPTION"
+        width: 30
     },{
-        id: 2,
-        name: "DISCRETE MATHEMATICS",
-        code: "232323",
-        details: "JUST DESCRIPTION"
-    },{
-        id: 3,
-        name: "DATABASES",
-        code: "2555o9888",
-        details: "JUST DESCRIPTION"
+        header: "Some Stuff",
+        dataIndex: "SomeStuff",
+        width: 20
     }],
+    store: [],
     form: {
         id: "units-form",
-        url: "./save",
+        url: "../helloservlet",
         items: [{
             label: "Name",
             name: "cname",
@@ -53,6 +42,11 @@ TracomAcademy.Grid.apply({
             name: "details",
             id: "unit.details",
             type: "textarea"
+        },{
+            label: "Password",
+            name: "password",
+            id: "unit.password",
+            type: "password"
         },{
             label: "Course",
             name: "course",

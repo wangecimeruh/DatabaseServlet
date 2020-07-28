@@ -46,6 +46,11 @@ TracomAcademy.JsLoader = {
 	}
 };
 
+TracomAcademy.DisplayPage = function(){
+
+
+}
+
 TracomAcademy.Grid = function(){
     let me = this;
 
@@ -93,6 +98,7 @@ TracomAcademy.Grid = function(){
     document.getElementById(addButton).addEventListener("click", function(){
         TracomAcademy.Form.call(me);
     });
+
 
 }
 

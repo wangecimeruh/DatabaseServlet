@@ -87,6 +87,8 @@ public class Database {
         }catch (SQLException sqlException){
             sqlException.printStackTrace();
             //TODO handle exception properly
+        }finally {
+
         }
     }
 
@@ -105,8 +107,9 @@ public class Database {
     public void createTables() {
         PreparedStatement statement = null;
         try {
+            Connection dbConnection = DriverManager.getConnection(this.url + this.database,  this.userName, this.password);
             for (String sql : this.createTablesSql) {
-                statement = this.dbConnection.prepareStatement(sql);
+                statement = dbConnection.prepareStatement(sql);
                 statement.executeUpdate();
             }
         } catch (SQLException e) {

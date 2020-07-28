@@ -66,14 +66,33 @@ TracomAcademy.Grid = function(){
     });
 
     //load table data
-    me.store.forEach(record => {
-        tableRows += `<tr>`;
-        me.columns.forEach(column => {
-            tableRows += `<td>${record[column.dataIndex]}</td>`;
-        });
-        tableRows += `</tr>`;
+   let xhr = new XMLHttpRequest();
+   xhr.onreadystatechange = function(){
+    if (xhr.readyState == XMLHttpRequest.DONE){
+        if (xhr.status == 200){
+            let response = eval('(' + xhr.responseText + ')');
+            me.store = response;
 
-    });
+            me.store.forEach(record => {
+                tableRows += `<tr>`;
+                me.columns.forEach(column => {
+                    tableRows += `<td>${record[column.dataIndex]}</td>`;
+                });
+                tableRows += `</tr>`;
+
+            });
+
+        }else{
+            console.log("empty row!!");
+
+        }
+
+    }
+
+   }
+    xhr.open('get', me.url, false);
+    xhr.send();
+
 
     //adding grid buttons
     let addButton = me.componentId + '-add';
@@ -98,6 +117,7 @@ TracomAcademy.Grid = function(){
     document.getElementById(addButton).addEventListener("click", function(){
         TracomAcademy.Form.call(me);
     });
+
 
 
 }
@@ -162,18 +182,11 @@ TracomAcademy.FormSave = function(){
    xhr.onreadystatechange = function(){
     if (xhr.readyState == XMLHttpRequest.DONE){
         if (xhr.status == 200){
-            console.log("Successfull");
-
-            let response = eval('(' + xhr.responseText + ')');
-
-            console.log(response);
-
-            me.store = response;
-
+            alert(xhr.responseText);
             TracomAcademy.Grid.call(me);
 
         }else{
-            alert('Error ocurred ' + xhr.status);
+            alert('Error occurred ' + xhr.status);
 
         }
 

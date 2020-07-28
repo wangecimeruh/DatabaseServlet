@@ -1,4 +1,4 @@
 (function(){
-    TracomAcademy.JsLoader.registerLinkHandler('topnav-units-handler', 'units/units-list', 'renderUnits');
+    TracomAcademy.JsLoader.registerLinkHandler('topnav-units', 'units/units', 'renderUnits');
 
 })();

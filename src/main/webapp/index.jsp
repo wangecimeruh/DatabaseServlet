@@ -15,7 +15,7 @@
       <a href="#">FACULTIES</a>
       <a href="#">DEPARTMENTS</a>
       <a href="#">COURSES</a>
-      <a href="#" id="topnav-units-handler">UNITS</a>
+      <a href="#" id="topnav-units">UNITS</a>
       <a href="#">STUDENTS</a>
       <a href="#">LECTURERS</a>
     </div>

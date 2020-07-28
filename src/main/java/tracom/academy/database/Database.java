@@ -95,6 +95,8 @@ public class Database {
         }catch (SQLException sqlException){
             sqlException.printStackTrace();
             //TODO handle exception properly
+        }finally {
+
         }
     }
 

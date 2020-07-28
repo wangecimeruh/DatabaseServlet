@@ -1,5 +1,51 @@
 var TracomAcademy = TracomAcademy || {};
 
+TracomAcademy.JsLoader = {
+	loadedJs: [],
+	labUtil: function(){
+		var me = this;
+
+		//file to LAB
+		var fl = arguments[0];
+
+		//fn to create
+		var fnname = arguments[1];
+		var fn = window[fnname];
+
+		//fn params
+		var fnparams = [];
+		for (var i = 2; i < arguments.length; i++) {
+			fnparams.push(arguments[i]);
+		}
+
+		//check if fn executed
+		if(me.loadedJs.indexOf(fl) < 0){
+			$LAB.script("./" + fl + ".js?v=" + Date.now()).wait(function(){
+				me.loadedJs.push(fl);
+				if (typeof fn === "function"){
+					fn.apply(null,fnparams);
+
+				}else if(typeof fn === "undefined" && typeof fnname !== "undefined"){ //retry
+					fn = window[fnname];
+					fn.apply(null,fnparams);
+
+				}
+			});
+		}else{
+			fn.apply(null,fnparams);
+
+		}
+	},
+	registerLinkHandler: function(linkId, file, func){
+        document.getElementById(linkId).addEventListener("click", event => {
+           event.preventDefault();
+
+           this.labUtil(file, func);
+
+        });
+	}
+};
+
 TracomAcademy.Grid = function(){
     let me = this;
 

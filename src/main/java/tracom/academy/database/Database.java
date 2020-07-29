@@ -104,7 +104,8 @@ public class Database {
     /**
      * @return database connection.
      */
-    public Connection getDbConnection(){
+    public Connection getDbConnection() throws SQLException{
+        this.dbConnection = DriverManager.getConnection(this.url + this.database, this.userName, this.password);
         return this.dbConnection;
     }
 
@@ -155,6 +156,31 @@ public class Database {
         }
     }
 
+    public ResultSet fetchData(String sql){
+
+        ResultSet rs = null;
+        Statement statement = null;
+
+        try {
+            Connection dbConnection = DriverManager.getConnection(this.url + this.database, this.userName, this.password);
+            statement = dbConnection.createStatement();
+            rs = statement.executeQuery(sql);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            //TODO handle exception properly
+        } finally {
+            try {
+                if (statement != null) statement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+                //TODO handle exception properly
+            }
+        }
+
+        return rs;
+
+    }
 }
 
 
